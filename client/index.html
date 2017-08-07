@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration|Login Page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='css/gfont.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="overlay">
+          <!-- <div class="col-xs-8 col-xs-offset-2"> -->
+            <div id="tabs">
+              <ul class="nav nav-pills">
+                <li class="active">
+                  <a href="#register" data-toggle="tab">Register</a>
+                </li>
+                <li><a href="#login" data-toggle="tab">Login</a></li>
+              </ul>
+              <div class="tab-content clearfix">
+                <div class="tab-pane active" id="register">
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <form class="form-register" role="form" @submit.prevent="doRegister">
+                            <h3 class="form-signin-heading">Register</h3>
+                            <div class="input-group margin-bottom-sm">
+                              <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                              <input class="form-control" type="text" placeholder="Nama" required autofocus v-model="name">
+                            </div>
+                            <div class="input-group margin-bottom-sm">
+                              <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                              <input class="form-control" type="text" placeholder="Username" required autofocus v-model="username">
+                            </div>
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="fa fa-lock fa-fw"></i></span>
+                              <input class="form-control" type="password" placeholder="Password" required  v-model="password">
+                            </div>
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="fa fa-envelope fa-fw"></i></span>
+                              <input class="form-control" type="text" placeholder="E-mail" required  v-model="email">
+                            </div>
+
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Daftar</button>
+                            <p align="center">or</p>
+                            <button type="button" class="btn btn-primary btn-block" onclick="fbLogin()"><i class="fa fa-facebook"> Register and Signin With Facebook</i></button>
+                          </form>
+                          <div class="footer">
+                            <span class="pull-right">&copy; 2017 <a  target="_blank" title="Company">Todo Cute</a></span>
+                          </div>
+                        </div>
+
+                      </div>
+                      <success v-show="success"/>
+                    </div>
+                  </div>
+                </div>
+                <div class="tab-pane" id="login">
+                  <div class="panel panel-default">
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-xs-12">
+                          <form class="form-signin" role="form" @submit.prevent="doLogin">
+                            <h3 class="form-signin-heading">Sign in</h3>
+
+                            <div class="input-group margin-bottom-sm">
+                              <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                              <input class="form-control" type="text" placeholder="Username" required autofocus v-model="username">
+                            </div>
+                            <div class="input-group">
+                              <span class="input-group-addon"><i class="fa fa-unlock-alt fa-fw"></i></span>
+                              <input class="form-control" type="password" placeholder="Password" required  v-model="password">
+                            </div>
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                          </form>
+                          <div class="footer">
+                            <span class="pull-right">&copy; 2017 <a  target="_blank" title="Company">Todo Cute</a></span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+        </div>
+      </div> <!-- /container -->
+    </div>
+    <script src="vue.js"></script>
+    <script src="js/loginFB.js"></script>
+  </body>
+</html>
